@@ -1,0 +1,3 @@
+const WINDOW = {
+  document: 
+}

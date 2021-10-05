@@ -3,5 +3,10 @@
         "source.fixAll": true,
         "source.fixAll.exlint": true
     },
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "files.exclude": {
+      "node_modules/": true,
+      ".history": true,
+      ".next": true
+  }
 }
