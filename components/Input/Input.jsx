@@ -2,8 +2,11 @@ import React from 'react'
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react'
 
-const Input = ({ type = 'text', placeholder }) => {
+const Input = ({ type = 'text', placeholder, onChange }) => {
   const theme = useTheme()
+  const handleOnChange = (event) => {
+    onChange(event.target.value)
+  }
   return (
     <div
       css={css`
@@ -28,6 +31,7 @@ const Input = ({ type = 'text', placeholder }) => {
           cursor: pointer;
         `}
         type={type}
+        onChange={handleOnChange}
         placeholder={placeholder}
       />
     </div>

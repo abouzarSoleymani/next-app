@@ -8,7 +8,7 @@ const Button = ({ type = 'button', buttonType = 'primary', children }) => {
     <div>
       <button
         css={css`
-          width: '100%';
+          width: 100%;
           background-color: ${theme.colors[buttonType]};
           color: white;
           font-size: ${theme.typography.paragraph};

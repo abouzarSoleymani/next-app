@@ -3,14 +3,14 @@ import React from 'react'
 import { css } from '@emotion/react'
 import Input from '../Input/Input'
 
-const InputPassword = ({ placeholder }) => (
+const InputPassword = (props) => (
   <div
     css={css`
       width: '100%';
       direction: ltr;
     `}
   >
-    <Input type="password" placeholder={placeholder} />
+    <Input type="password" {...props} />
   </div>
 )
 

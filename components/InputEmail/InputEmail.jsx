@@ -3,14 +3,14 @@ import React from 'react'
 import { css } from '@emotion/react'
 import Input from '../Input/Input'
 
-const InputEmail = ({ placeholder }) => (
+const InputEmail = (props) => (
   <div
     css={css`
       width: '100%';
       direction: ltr;
     `}
   >
-    <Input type="email" placeholder={placeholder} />
+    <Input type="email" {...props} />
   </div>
 )
 
