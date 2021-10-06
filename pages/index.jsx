@@ -2,11 +2,14 @@ import React from 'react'
 import Head from 'next/head'
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
+import { useSelector } from 'react-redux'
 import Layout from '../containers/Layout/Layout'
 import useLocalStorage from '../Hooks/useLocalStorage'
 
 export default function Home() {
   const [value, setValue] = useLocalStorage('test')
+  const auth = useSelector((state) => state.auth)
+  console.log(auth)
   setValue('this is a test')
   console.log(value)
   const color = 'white'
@@ -20,6 +23,8 @@ export default function Home() {
 
       <Layout>
         <main>
+          {auth && auth.logged && <div>welcome</div>}
+          {!auth || (!auth.logged && <div>logout</div>)}
           <div
             css={css`
               padding: 32px;

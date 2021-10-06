@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import { useDispatch } from 'react-redux'
 import LayoutAuth from '../containers/LayoutAuth/LayoutAuth'
 import FormControl from '../containers/FormControl/FormControl'
 import {
@@ -10,13 +11,20 @@ import {
   Hyperlink,
   Paragraph,
 } from '../components'
+import actionTypes from '../config/actionTypes'
 
 export default function Login() {
+  const dispatch = useDispatch()
   const [formValue, setFormValue] = useState({})
   const router = useRouter()
   const handleSubmit = (event) => {
     if (event) event.preventDefault()
-    console.log('form:', formValue)
+    dispatch({
+      type: actionTypes.LOGIN,
+      logged: true,
+      email: formValue.email,
+    })
+    //  console.log('form:', formValue)
     router.push('/')
   }
   const handleOnChange = (name, value) => {
