@@ -7,6 +7,7 @@ const InputPassword = ({ placeholder }) => (
   <div
     css={css`
       width: '100%';
+      direction: ltr;
     `}
   >
     <Input type="password" placeholder={placeholder} />
